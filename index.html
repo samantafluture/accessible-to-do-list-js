@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List Accessible</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1 tabindex="-1" id="heading">To Do List</h1>
+                <form action="index.html" method="post" id="to_do_form">
+                    <label for="todo">
+                        Add a new task to your list (required)
+                    </label>
+                    <div>
+                        <input
+                            type="text"
+                            name="todo"
+                            class="task_input"
+                            id="todo"
+                            aria-describedby="example"
+                            required
+                        />
+                        <input type="submit" value="Add" class="add_task" />
+                    </div>
+                    <div class="example" id="example">
+                        Example: "Buy milk"
+                    </div>
+                </form>
+                <ul class="list" id="list"></ul>
+                <div 
+                    role="status" 
+                    aria-live="polite"
+                    id="sc_feedback"
+                    class="sc_feedback"
+                >
+                <!-- Area to be pronounceable by screen reader -->
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
